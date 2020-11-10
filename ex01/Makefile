@@ -6,12 +6,12 @@
 #    By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/09 16:46:07 by amunoz-p          #+#    #+#              #
-#    Updated: 2020/11/10 18:31:12 by amunoz-p         ###   ########.fr        #
+#    Updated: 2020/11/10 19:22:35 by amunoz-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS			= main.cpp
+SRCS			= main.cpp notebook.cpp contact.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 

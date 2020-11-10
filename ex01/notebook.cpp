@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   notebook.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/09 16:46:16 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/10 19:37:38 by amunoz-p         ###   ########.fr       */
+/*   Created: 2020/11/10 19:02:35 by amunoz-p          #+#    #+#             */
+/*   Updated: 2020/11/10 19:30:41 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "notebook.hpp"
 
-int main(void)
+void		Notebook::show_startup(void)
 {
-	Notebook notebook;
-	bool run;
-	std::string command;
+	std::cout << "@PHONEBOOK\n";
+	std::cout << "ENTER THE COMMAND [ADD OR SEARCH OR EXIT]\n";	
+}
 
-	notebook.show_startup();
-	run = true;
-	while (run)
-	{
-		std::cout << ">";
-		std::getline(std::cin, command);
-		if (command == "ADD")
-			notebook.add_contact();
-		else if (command == "EXIT")
-		{
-			std::cout << "BYE :D\n";
-			run = false;
-		}
-		else if (command == "SEARCH")
-		{
-			
-		}
-	}
-	return (0);
+Notebook::Notebook()
+{
+	this->amount = 0;
+}
+
+Notebook::~Notebook()
+{
+}
+
+void		Notebook::add_contact(void)
+{
+	if (this->amount == 8)
+		std::cout << "# THE PHONEBOOK IS FULL\n";
+	else if(this->contacts[this->amount].set_informations(this->amount + 1))
+		this->amount++;
 }
