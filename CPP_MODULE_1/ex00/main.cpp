@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/06 17:29:09 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/06 18:44:52 by amunoz-p         ###   ########.fr       */
+/*   Created: 2020/11/11 17:48:06 by amunoz-p          #+#    #+#             */
+/*   Updated: 2020/11/11 19:04:08 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include <locale>
+#include "Pony.hpp"
 
-int main(int argc, char **argv)
+int 			main(void)
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-	else
-	{
-		for (int i = 1; i < argc; i++)
-		{
-			std::string str(argv[i]);
-			for (size_t j = 0; j < str.length(); j++)
-				std::cout << (char)std::toupper(str[j]);
-			std::cout << " ";
-		}
-		std::cout << "\n";
-	}
+	Pony pony_stack("black");
+	pony_stack.think();
 	return 0;
 }
