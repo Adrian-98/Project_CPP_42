@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 19:18:21 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/11 17:10:26 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/11 17:36:21 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,16 @@ void		Contact::display(void)
 
 void        Contact::display_header(void)
 {
-	std::cout << std::setw(10) << this->index << "|";
+	std::cout << "|" << std::setw(10) << this->index;
 	for(int i = FirstName; i <= Nickname; i++)
 	{
-		std::cout << this->informations[i] << "  |  ";
+		std::cout << "|";
+		if (this->informations[i].length() > 10)
+			std::cout << this->informations[i].substr(0, 9) << ".";
+		else
+			std::cout << std::setw(10) << this->informations[i];
 	}
-	std::cout << "\n";
+	std::cout << "|\n";
 }
 std::string Contact::fields_name[11] = {
 	"First Name",
