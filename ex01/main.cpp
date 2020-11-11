@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 16:46:16 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/10 19:37:38 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/11 16:30:03 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ int main(void)
 			run = false;
 		}
 		else if (command == "SEARCH")
-		{
-			
-		}
+			notebook.search_contact();
 	}
 	return (0);
 }

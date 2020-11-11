@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 19:02:35 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/10 19:30:41 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/11 16:57:25 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,50 @@ void		Notebook::add_contact(void)
 		std::cout << "# THE PHONEBOOK IS FULL\n";
 	else if(this->contacts[this->amount].set_informations(this->amount + 1))
 		this->amount++;
+}
+
+void    Notebook::show_search_header(void)
+{
+	std::cout << "|-----------LIST OF CONTACTS----------------|" << std::endl;
+	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
+	std::cout << "|-------------------------------------------|" << std::endl;
+	//for (int i = 0; i < this->amount; i++)
+		//this->contacts[i].display_header();
+	std::cout << "|-------------------------------------------|" << std::endl;
+}
+
+void 	Notebook::search_contact(void)
+{
+	int index = 0;
+	bool run = true;
+
+	if (this->amount == 0)
+		std::cout << "# Empty phonebook, add a contact\n";
+	else
+	{
+		this->show_search_header();
+		std::cout << "# -Enter the index number to display a contact or 0 to exit\n~";
+		while (run)
+		{
+			std::cin >> index;
+			if (index <= 0)
+			{
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "# EXIT\n~";
+				run = false;
+			}
+			else if (index > this->amount)
+			{
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "# Invalid index\n~";
+			}
+			else
+				run = false;			
+		}
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "eligio el contact" << (index) << std::endl;
+		//this->contacts[index - 1].display();
+	}
 }
