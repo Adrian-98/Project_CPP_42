@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 19:02:35 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/11 16:57:25 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/11 17:02:12 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void    Notebook::show_search_header(void)
 	std::cout << "|-----------LIST OF CONTACTS----------------|" << std::endl;
 	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 	std::cout << "|-------------------------------------------|" << std::endl;
-	//for (int i = 0; i < this->amount; i++)
-		//this->contacts[i].display_header();
+	for (int i = 0; i < this->amount; i++)
+		this->contacts[i].display_header();
 	std::cout << "|-------------------------------------------|" << std::endl;
 }
 
@@ -76,7 +76,6 @@ void 	Notebook::search_contact(void)
 				run = false;			
 		}
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		std::cout << "eligio el contact" << (index) << std::endl;
-		//this->contacts[index - 1].display();
+		this->contacts[index - 1].display();
 	}
 }

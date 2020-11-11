@@ -6,12 +6,31 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 19:18:21 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/10 19:37:48 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/11 17:10:26 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "notebook.hpp"
 
+void		Contact::display(void)
+{
+	std::cout << "# Contact [" << this->index << "]" << std::endl;
+	for (int i = FirstName; i <= Secret; i++)
+	{
+		std::cout << Contact::fields_name[i] << ":";
+		std::cout << this->informations[i] << std::endl;
+	}
+}
+
+void        Contact::display_header(void)
+{
+	std::cout << std::setw(10) << this->index << "|";
+	for(int i = FirstName; i <= Nickname; i++)
+	{
+		std::cout << this->informations[i] << "  |  ";
+	}
+	std::cout << "\n";
+}
 std::string Contact::fields_name[11] = {
 	"First Name",
 	"Last Name",
