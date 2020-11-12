@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 20:07:21 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/12 19:34:56 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/12 19:38:50 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Zombie::~Zombie()
 
 void		Zombie::announce()
 {
-	std::cout << "New zombie called " << this->name << "~" << this->type
+	std::cout << "New zombie called " << this->name << "(" << this->type << ")"
 	<< "Braaaaaiiiiinns.......:S\n";
 }
 
