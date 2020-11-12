@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 20:07:21 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/12 18:32:51 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/12 19:34:56 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ Zombie::Zombie(std::string type, std::string name)
 {
 	this->name = name;
 	this->type = type;
-	Zombie::announce();
 }
 
 Zombie::~Zombie()

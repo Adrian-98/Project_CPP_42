@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 16:18:48 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/12 18:20:56 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/12 19:15:11 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ Zombie *ZombieEvent::newZombie(std::string name)
 Zombie *ZombieEvent::randomChump(void)
 {
 	Zombie *zombie = ZombieEvent::newZombie(Zombie::randomname());
+	zombie->announce();
 	return (zombie);	
 }

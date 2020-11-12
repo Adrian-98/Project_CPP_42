@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 20:04:28 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/12 18:29:38 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/12 19:35:06 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Zombie
 			std::string name;
 			std::string type;
 	public:
-			Zombie(std::string name, std::string type);
+			Zombie(std::string type, std::string name);
 			virtual ~Zombie();
 			void	announce();
 			static std::string	randomname();
