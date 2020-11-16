@@ -1,0 +1,1 @@
+clang++ -Wall -Wextra -Werror -I. main.cpp Human.cpp Brain.cpp && ./a.out
