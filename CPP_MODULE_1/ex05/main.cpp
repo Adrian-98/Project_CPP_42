@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 17:33:19 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/16 19:44:25 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/16 20:07:05 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int main()
 {
-	Human bob;
-
+	Human bob;	
+	
 	std::cout << bob.identify() << std::endl;
 	std::cout << bob.getBrain().identify() << std::endl;
 }

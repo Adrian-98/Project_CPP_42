@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:02:59 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/16 19:44:40 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/16 20:09:27 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Human
 {
 	private:
 			Brain brain;
-
 	public:
 			Human();
 			virtual ~Human();
