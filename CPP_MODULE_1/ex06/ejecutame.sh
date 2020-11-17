@@ -1,0 +1,1 @@
+clang++ -Wall -Wextra -Werror -I. main.cpp Weapon.cpp HumanA.cpp HumanB.cpp && ./a.out
