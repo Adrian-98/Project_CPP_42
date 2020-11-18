@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 19:39:57 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/18 18:33:51 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/18 19:09:50 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ int 	main(int argc, char **argv)
 				break;
 			s3.replace(found, s1.length(), s2);
 		}
-		std::cout << s3 << std::endl;			
-	}
+		fs << s3 << std::endl;
+	}			
 	fe.close();
 	return (0);
 }
