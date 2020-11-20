@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 16:37:58 by adrian            #+#    #+#             */
-/*   Updated: 2020/11/14 17:03:18 by adrian           ###   ########.fr       */
+/*   Updated: 2020/11/16 17:56:01 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ZombieHorde::ZombieHorde(int n, std::string type)
 	this->n = n;
 	for(int i = 0; i < n; i++)
 	{
-		this->zombie[i] = new Zombie(zombie[i]->randomname(), type);
+		this->zombie[i] = new Zombie(type, zombie[i]->randomname());
 		zombie[i]->announce();
 	}
 }

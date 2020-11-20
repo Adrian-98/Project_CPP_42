@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 20:07:21 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/12 19:38:50 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/12 19:41:25 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ std::string  Zombie::randomname(void)
 	
 	std::string names[] = {"EL GONCHO", "EL PEPE", "EL JOSE", "EL Igna", "EL FERNANDITO", "MALAMANERA"};
 	
-	std::this_thread::sleep_for (std::chrono::seconds(1));
+	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 	std::srand(std::time(0));
 
 	i = std::rand() % 6;

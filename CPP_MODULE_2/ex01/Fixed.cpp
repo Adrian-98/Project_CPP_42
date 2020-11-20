@@ -6,17 +6,25 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 19:16:29 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/20 19:46:02 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/20 19:46:59 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed(const int a)
 {
-	std::cout<<"Default constructor called "<<std::endl;
-	this->b = 0;
+	std::cout<<"Default integer constructor called "<<std::endl;
+	this->value = 0;
+
 }
+
+Fixed::Fixed(const float a)
+{
+	std::cout<<"Default float constructor called "<<std::endl;
+	this->value = value << this->b;
+}
+
 
 Fixed::~Fixed()
 {
@@ -26,7 +34,7 @@ Fixed::~Fixed()
 
 Fixed::Fixed(const Fixed &a)
 {
-	std::cout<<"Copy constructor called "<<std::endl;
+	std::cout << "Copy constructor called "<<std::endl;
 	*this = a;
 }
 
