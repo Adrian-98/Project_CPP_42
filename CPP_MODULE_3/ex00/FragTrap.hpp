@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:32:51 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/23 20:29:10 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/23 21:22:51 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@
 #include <sstream>
 #include <chrono> 
 #include <thread>
+# include <cstring>
 
-#define FIRE_BLUSTER 35
-#define SNIPER_HEADSHOT 100
+#define FIRE_BLUSTER 40
+#define SNIPER_HEADSHOT 70
 #define KNIFED 45
 #define NAPAL 25
-#define GRANADE 20
+#define GRANADE 22
 #define TOMAHOWK 75
 
 
@@ -48,7 +49,7 @@ class FragTrap
 			void	meleeAttack(std::string const &target);
 			int	takeDamage(unsigned int amount);
 			void	beRepaired(unsigned int amount);
-			std::string	vaulthunter_dot_exe(std::string const & target); 
+			int	vaulthunter_dot_exe(std::string const & target); 
 };
 
 

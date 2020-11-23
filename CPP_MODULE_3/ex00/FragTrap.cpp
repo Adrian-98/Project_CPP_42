@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:31:21 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/23 20:28:30 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/23 21:20:53 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ FragTrap::FragTrap(std::string name)
 
 FragTrap::~FragTrap()
 {
-	std::cout << name << " your time has come, greet Death as an old friend\n";
+	std::cout << name << " your time has come, greet Death as an old friend.....See u LOOSER :D\n";
 }
 
 void FragTrap::rangedAttack(std::string const &target)
@@ -43,10 +43,10 @@ void FragTrap::meleeAttack(std::string const &target)
 
 int FragTrap::takeDamage(unsigned int amount)
 {
+	hit_points = hit_points - amount + armor_damage_reduction;
 	std::cout << "Got damn! I' ve been hit\n";
-	if (hit_points - amount + armor_damage_reduction > 0)
-	{
-		hit_points -= amount - armor_damage_reduction;	
+	if (hit_points > 0)
+	{	
 		std::cout << "Fair enough...You are better than I remeber... [" << hit_points << "]\n";
 	}
 	else 
@@ -65,17 +65,28 @@ void FragTrap::beRepaired(unsigned int amount)
 		hit_points = max_hit_points;
 }
 
-std::string FragTrap::vaulthunter_dot_exe(std::string const &target)
+int FragTrap::vaulthunter_dot_exe(std::string const &target)
 {
 	int i = 0;
 	
-	std::string names[] = {"Fire Bluster", "Sniper HeadShot", "Knifed", "Napal ", "Granade", "Tomahowk"};
+	std::string names[] = {"Fire Bluster", "Sniper HeadShot", "Knifed", "Napal", "Granade", "Tomahowk"};
 	
 	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 	std::srand(std::time(0));
 
 	i = std::rand() % 6;
-	std::cout << name << " uses " << names[i] << " attack agaisnt" << target << std::endl;
-	return (names[i]);
+	std::cout << name << " uses " << names[i] << " attack agaisnt " << target << std::endl;
+	if (i == 0)
+		return (FIRE_BLUSTER);
+	if (i == 1)
+		return (SNIPER_HEADSHOT);
+	if (i == 2)
+		return (KNIFED);
+	if (i == 3)
+		return (NAPAL);
+	if (i == 4)
+		return (GRANADE);
+	else
+		return (TOMAHOWK);
 }
 

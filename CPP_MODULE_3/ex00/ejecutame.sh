@@ -1,1 +1,1 @@
-clang++ -Wall -Wextra -Werror -I. main.cpp FragTrap.cpp && ./a.out
+clang++ -Wall -Wextra -Werror  main.cpp FragTrap.cpp && ./a.out
