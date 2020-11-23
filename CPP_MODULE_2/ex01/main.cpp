@@ -6,12 +6,12 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:04:51 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/20 19:05:23 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/23 17:28:14 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
+
 
 int main(void)
 {
