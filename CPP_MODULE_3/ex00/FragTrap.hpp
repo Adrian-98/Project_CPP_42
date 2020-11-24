@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:32:51 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/23 21:22:51 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/24 18:52:54 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ class FragTrap
 			virtual ~FragTrap();
 			void	rangedAttack(std::string const &target);
 			void	meleeAttack(std::string const &target);
-			int	takeDamage(unsigned int amount);
+			int		takeDamage(unsigned int amount);
 			void	beRepaired(unsigned int amount);
-			int	vaulthunter_dot_exe(std::string const & target); 
+			int		vaulthunter_dot_exe(std::string const & target); 
 };
 
 

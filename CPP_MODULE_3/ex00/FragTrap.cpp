@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:31:21 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/23 21:20:53 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/24 19:34:37 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ int FragTrap::takeDamage(unsigned int amount)
 	std::cout << "Got damn! I' ve been hit\n";
 	if (hit_points > 0)
 	{	
+		if (hit_points > max_hit_points)
+			hit_points = max_hit_points;
 		std::cout << "Fair enough...You are better than I remeber... [" << hit_points << "]\n";
 	}
 	else 
@@ -63,12 +65,30 @@ void FragTrap::beRepaired(unsigned int amount)
 	hit_points += amount;
 	if (hit_points > max_hit_points)
 		hit_points = max_hit_points;
+	energy_points += 10;
+	if (energy_points > max_energy_points)
+		energy_points = max_energy_points;	
 }
 
 int FragTrap::vaulthunter_dot_exe(std::string const &target)
 {
 	int i = 0;
 	
+	if (energy_points > 25)
+		energy_points = energy_points - 25;
+	if (energy_points < 25)
+	{
+		
+		if (energy_points < 0)
+		{
+			energy_points = 0;
+			std::cout << "AHHH....I AM OUT OF ENERGY.....\n";
+			std::cout << energy_points << std::endl;
+		}
+		std::cout << "NOT ENOUGH ENERGYYYYYYYYYYYYYY.....\n";
+		return (0);
+	}
+	std::cout << "VALOR DE ENERGIA = " << energy_points << std::endl;
 	std::string names[] = {"Fire Bluster", "Sniper HeadShot", "Knifed", "Napal", "Granade", "Tomahowk"};
 	
 	std::this_thread::sleep_for(std::chrono::milliseconds(1000));

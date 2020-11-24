@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:32:17 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/23 21:21:51 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/24 19:11:25 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,23 @@ int main(void)
 	while (1)
 	{
 		attack = a->vaulthunter_dot_exe(master2);
-		life2 = b->takeDamage(attack);
+		if (attack != 0)
+			life2 = b->takeDamage(attack);
 		if (life2 <= 0)
 		{
 			delete b;
 			break ;
 		}
-		b->beRepaired(20);
+		b->beRepaired(25);
 		attack = b->vaulthunter_dot_exe(master);
-		life = a->takeDamage(attack);
+		if (attack != 0)
+			life = a->takeDamage(attack);
 		if (life <= 0)
 		{
 			delete a;
 			break ;
 		}
-		a->beRepaired(20);
+		a->beRepaired(25);
 	}
 	return (0);
 }
