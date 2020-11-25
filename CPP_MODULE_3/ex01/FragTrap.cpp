@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:31:21 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/23 21:20:53 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/25 17:05:42 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ FragTrap::FragTrap(std::string name)
 
 FragTrap::~FragTrap()
 {
-	std::cout << name << " your time has come, greet Death as an old friend.....See u LOOSER :D\n";
+	std::cout << name << " I got no rival\n";
 }
 
 void FragTrap::rangedAttack(std::string const &target)

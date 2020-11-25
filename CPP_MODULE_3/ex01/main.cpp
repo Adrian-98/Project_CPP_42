@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:32:17 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/24 19:53:57 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/25 17:12:28 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,32 @@
 
 int main(void)
 {
-	FragTrap frag("FR4G");
+	int attack;
+	int life;
+	FragTrap *frag = new FragTrap("FR4G");
 	ScavTrap scav("SC4V");
 
-	srand(time(NULL));
-	frag.vaulthunter_dot_exe("CL4P-TP");
-	frag.meleeAttack("CL4P-TP");
-	frag.rangedAttack("CL4P-TP");
-	frag.takeDamage(24);
-	frag.beRepaired(50);
-	frag.takeDamage(42);
-	frag.takeDamage(100);
-	frag.beRepaired(125);
-	frag.vaulthunter_dot_exe("CL4P-TP");
-	frag.vaulthunter_dot_exe("CL4P-TP");
-	frag.vaulthunter_dot_exe("CL4P-TP");
-	frag.vaulthunter_dot_exe("CL4P-TP");
-
-	std::cout << "---" << std::endl;
+	
+	attack = frag->vaulthunter_dot_exe("CL4P-TP");
+	frag->takeDamage(attack);
+	frag->meleeAttack("CL4P-TP");
+	frag->takeDamage(30);
+	frag->rangedAttack("CL4P-TP");
+	frag->takeDamage(20);
+	frag->beRepaired(50);
+	while (1)
+	{
+		frag->vaulthunter_dot_exe("CL4P-TP");
+		life = frag->takeDamage(attack);
+		if (life == 0)
+		{
+			delete frag;
+			break;
+		}
+		frag->beRepaired(45);
+	}
+	
+	std::cout << "---------------" << std::endl;
 
 	scav.challengeNewcomer("CL4P-TP");
 	scav.meleeAttack("CL4P-TP");
@@ -42,9 +50,9 @@ int main(void)
 	scav.takeDamage(42);
 	scav.takeDamage(100);
 	scav.beRepaired(125);
-	scav.challengeNewcomer("CL4P-TP");
-	scav.challengeNewcomer("CL4P-TP");
-	scav.challengeNewcomer("CL4P-TP");
-	scav.challengeNewcomer("CL4P-TP");
+	scav.challengeNewcomer("SC4V");
+	scav.challengeNewcomer("SC4V");
+	scav.challengeNewcomer("SC4V");
+	scav.challengeNewcomer("SC4V");
 	return (0);
 }

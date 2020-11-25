@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 18:43:50 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/24 19:51:04 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/25 17:06:51 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ScavTrap::ScavTrap(std::string name)
 {
 	this->name = name;
-	std::cout << name <<" you have been chosen, prepare for the War...\n";
+	std::cout << name <<" you have been chosen, prepare for CHALLENGES...\n";
 	hit_points = 100;
 	max_hit_points = 100;
 	energy_points = 50;
@@ -28,7 +28,7 @@ ScavTrap::ScavTrap(std::string name)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << name << " your time has come, greet Death as an old friend.....See u LOOSER :D\n";
+	std::cout << name << " Well played, doors are now open..... \n";
 }
 
 void ScavTrap::rangedAttack(std::string const &target)
