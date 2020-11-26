@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:32:51 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/23 21:22:51 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/26 18:27:57 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ class FragTrap
 	public:
 			FragTrap(std::string name);
 			virtual ~FragTrap();
+			FragTrap(const FragTrap &other);
+			FragTrap  &operator=(const FragTrap &other);
 			void	rangedAttack(std::string const &target);
 			void	meleeAttack(std::string const &target);
 			int	takeDamage(unsigned int amount);

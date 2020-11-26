@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 18:43:50 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/25 17:06:51 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/26 18:31:40 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,26 @@ ScavTrap::ScavTrap(std::string name)
 	melee_attack_damage = 20;
 	ranged_attack_damage = 30;
 	armor_damage_reduction = 3;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &other)
+{
+	std::cout<<"Copy constructor called "<<std::endl;
+	*this = other;
+}
+
+ScavTrap &ScavTrap::operator=(ScavTrap const &other)
+{
+	this->name = other.name;
+	this->level = other.level;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
+	return (*this);
 }
 
 ScavTrap::~ScavTrap()

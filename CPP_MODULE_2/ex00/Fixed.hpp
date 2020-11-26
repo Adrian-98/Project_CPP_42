@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 19:16:31 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/20 17:58:08 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/23 20:27:15 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ class Fixed
 			int getRawBits(void) const;
 			void setRawBits(int const raw);
 };
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:31:21 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/24 19:34:37 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/26 18:22:18 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,26 @@ FragTrap::FragTrap(std::string name)
 	melee_attack_damage = 30;
 	ranged_attack_damage = 20;
 	armor_damage_reduction = 5;
+}
+
+FragTrap::FragTrap(const FragTrap &other)
+{
+	std::cout<<"Copy constructor called "<<std::endl;
+	*this = other;
+}
+
+FragTrap &FragTrap::operator=(FragTrap const &other)
+{
+	this->name = other.name;
+	this->level = other.level;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
+	return (*this);
 }
 
 FragTrap::~FragTrap()
