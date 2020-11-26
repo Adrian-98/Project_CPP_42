@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:38:44 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/25 20:21:54 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/26 18:39:01 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class ClapTrap
 			ClapTrap(std::string _name, int _hit_points, int _max_hit_points, int _energy_points,
 			int _max_energy_points, int _level, int _melee_attack_damage, int _ranged_attack_damage,
 			int _armor_damage_reduction);
+			ClapTrap(const ClapTrap &other);
+			ClapTrap  &operator=(const ClapTrap &other);
 			virtual ~ClapTrap();
 			void	rangedAttack(std::string const &target);
 			void	meleeAttack(std::string const &target);

@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 18:43:50 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/25 20:27:26 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/26 18:37:58 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,26 @@ ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name, 100, 100, 100, 100, 1, 3
 {
 	std::cout << name <<" you have been chosen, prepare for CHALLENGES...\n";
 	
+}
+
+ScavTrap::ScavTrap(const ScavTrap &other)
+{
+	std::cout<<"Copy constructor called "<<std::endl;
+	*this = other;
+}
+
+ScavTrap &ScavTrap::operator=(ScavTrap const &other)
+{
+	this->name = other.name;
+	this->level = other.level;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
+	return (*this);
 }
 
 ScavTrap::~ScavTrap()

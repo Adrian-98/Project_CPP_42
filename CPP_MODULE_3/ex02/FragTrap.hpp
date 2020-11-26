@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:32:51 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/25 20:24:13 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/26 18:37:43 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ class FragTrap : virtual public ScavTrap
 	public:
 			FragTrap(std::string _name);
 			virtual ~FragTrap();
+			FragTrap(const FragTrap &other);
+			FragTrap  &operator=(const FragTrap &other);
 			void	beRepaired(unsigned int amount);
 			int	vaulthunter_dot_exe(std::string const & target); 
 };

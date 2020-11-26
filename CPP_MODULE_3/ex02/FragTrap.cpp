@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:31:21 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/25 20:24:06 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/26 18:37:27 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,27 @@ FragTrap::FragTrap(std::string _name) : ClapTrap(_name, 100, 100, 100, 100, 1, 3
 {
 	std::cout << name <<" you have been chosen, prepare for the War...\n";
 }
+
+FragTrap::FragTrap(const FragTrap &other)
+{
+	std::cout<<"Copy constructor called "<<std::endl;
+	*this = other;
+}
+
+FragTrap &FragTrap::operator=(FragTrap const &other)
+{
+	this->name = other.name;
+	this->level = other.level;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
+	return (*this);
+}
+
 
 FragTrap::~FragTrap()
 {

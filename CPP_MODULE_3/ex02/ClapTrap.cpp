@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:38:36 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/25 20:23:21 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/26 18:39:55 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,26 @@ ClapTrap::ClapTrap(std::string _name, int _hit_points, int _max_hit_points,
             melee_attack_damage(_melee_attack_damage), ranged_attack_damage(_ranged_attack_damage), armor_damage_reduction(_armor_damage_reduction)
 {
 	std::cout << "ClapTrap " << name << " created." << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &other)
+{
+	std::cout<<"Copy constructor called "<<std::endl;
+	*this = other;
+}
+
+ClapTrap &ClapTrap::operator=(ClapTrap const &other)
+{
+	this->name = other.name;
+	this->level = other.level;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
+	return (*this);
 }
 
 ClapTrap::~ClapTrap()
