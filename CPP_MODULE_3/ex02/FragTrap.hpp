@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:32:51 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/26 18:37:43 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/26 19:03:03 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <chrono> 
 #include <thread>
 # include <cstring>
+#include "ClapTrap.hpp"
 
 #define FIRE_BLUSTER 40
 #define SNIPER_HEADSHOT 70
@@ -29,7 +30,7 @@
 #define TOMAHOWK 75
 
 
-class FragTrap : virtual public ScavTrap
+class FragTrap : virtual public ClapTrap
 {
 	private:
 			FragTrap();

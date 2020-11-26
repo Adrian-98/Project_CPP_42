@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 18:43:58 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/26 18:38:13 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/26 19:03:15 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #define SCAVTRAPP_HPP
 
 #include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+
+#include "ClapTrap.hpp"
 
 class ScavTrap : virtual public ClapTrap
 {

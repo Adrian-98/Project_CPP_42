@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 18:43:50 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/26 18:37:58 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/26 19:05:17 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name, 100, 100, 100, 100, 1, 30, 20, 5)
 {
 	std::cout << name <<" you have been chosen, prepare for CHALLENGES...\n";
-	
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other)
@@ -29,13 +28,13 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &other)
 {
 	this->name = other.name;
 	this->level = other.level;
-	this->hitPoints = other.hitPoints;
-	this->maxHitPoints = other.maxHitPoints;
-	this->energyPoints = other.energyPoints;
-	this->maxEnergyPoints = other.maxEnergyPoints;
-	this->meleeAttackDamage = other.meleeAttackDamage;
-	this->rangedAttackDamage = other.rangedAttackDamage;
-	this->armorDamageReduction = other.armorDamageReduction;
+	this->hit_points = other.hit_points;
+	this->max_hit_points = other.max_hit_points;
+	this->energy_points = other.energy_points;
+	this->max_energy_points = other.max_energy_points;
+	this->melee_attack_damage = other.melee_attack_damage;
+	this->ranged_attack_damage = other.ranged_attack_damage;
+	this->armor_damage_reduction = other.armor_damage_reduction;
 	return (*this);
 }
 
