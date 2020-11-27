@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:32:17 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/27 17:25:42 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/27 18:19:16 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main(void)
 	std::cout << "---" << std::endl;
 
 	ScavTrap *scav = new ScavTrap("SC4V");
-	scav->challengeNewcomer("enemie");
+	scav->challengeNewcomer("SC4V");
 	scav->meleeAttack("CL4P-TP");
 	scav->rangedAttack("CL4P-TP");
 	scav->takeDamage(24);
@@ -41,20 +41,14 @@ int main(void)
 	scav->takeDamage(42);
 	scav->takeDamage(100);
 	scav->beRepaired(125);
-	scav->challengeNewcomer("enemie");
-	scav->challengeNewcomer("enemie");
-	scav->challengeNewcomer("enemie");
-	scav->challengeNewcomer("enemie");
-
-	std::cout << "---" << std::endl;
-
-
+	scav->challengeNewcomer("SC4V");
+	scav->challengeNewcomer("SC4V");
+	scav->challengeNewcomer("SC4V");
+	scav->challengeNewcomer("SC4V");
 
 	std::cout << "---" << std::endl;
 
 	delete frag;
 	delete scav;
-
-
 	return (0);
 }
