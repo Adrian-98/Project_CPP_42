@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:38:36 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/26 19:06:08 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/27 17:26:57 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 ClapTrap::ClapTrap(std::string _name, int _hit_points, int _max_hit_points,
 			int _energy_points, int _max_energy_points, int _level,
-			int _melee_attack_damage, int _ranged_attack_damage, int _armor_damage_reduction):
+			int _melee_attack_damage, int _ranged_attack_damage, int _armor_damage_reduction): name(_name),
             hit_points(_hit_points), max_hit_points(_max_hit_points), energy_points(_energy_points),
-            max_energy_points(_max_energy_points), level(_level), name(_name),
-            melee_attack_damage(_melee_attack_damage), ranged_attack_damage(_ranged_attack_damage), armor_damage_reduction(_armor_damage_reduction)
+            max_energy_points(_max_energy_points), level(_level),
+			melee_attack_damage(_melee_attack_damage), ranged_attack_damage(_ranged_attack_damage), armor_damage_reduction(_armor_damage_reduction)
 {
 	std::cout << "ClapTrap " << name << " created." << std::endl;
 }

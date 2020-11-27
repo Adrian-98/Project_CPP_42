@@ -6,19 +6,19 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:38:44 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/26 18:39:01 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/27 17:37:57 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+# include <iostream>
 
 class ClapTrap
 {
 	protected:
+			ClapTrap();
 			std::string name;
 			int hit_points;
 			int max_hit_points;
