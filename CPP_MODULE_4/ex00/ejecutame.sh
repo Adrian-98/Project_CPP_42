@@ -1,0 +1,1 @@
+clang++ -Wall -Wextra -Werror  main.cpp FragTrap.cpp && ./a.out
