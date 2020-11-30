@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:34:50 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/30 18:50:04 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/30 19:14:42 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class Sorcerer
 				Sorcerer  &operator=(const Sorcerer &other);
 				
 				void polymorph(Victim const &victim);
+				std::string const &get_name(void) const;
+				std::string const &get_title(void) const;
 };
 
 std::ostream &operator<<(std::ostream &out, Sorcerer const &sorcerer);

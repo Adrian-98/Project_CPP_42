@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:55:13 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/30 18:56:26 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/11/30 19:02:07 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Victim
 {
-		private:
+		protected:
 				Victim();
 				std::string name;
 		public:
