@@ -6,7 +6,7 @@
 /*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:23:57 by adrian            #+#    #+#             */
-/*   Updated: 2020/12/01 19:42:21 by adrian           ###   ########.fr       */
+/*   Updated: 2020/12/01 19:54:03 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void Character::attack(Enemy *enemy)
 			<< " with a " << this->weapon->getName() << std::endl;
 	this->weapon->attack();
 	enemy->takeDamage(this->weapon->getDamage());
-	std::cout << enemy->getHP() << std::endl;
 	if (enemy->getHP() == 0)
 		delete enemy;
 }
