@@ -6,11 +6,16 @@
 /*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 17:52:19 by adrian            #+#    #+#             */
-/*   Updated: 2020/12/01 18:43:36 by adrian           ###   ########.fr       */
+/*   Updated: 2020/12/01 19:48:58 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AWeapon.hpp"
+
+AWeapon::AWeapon():
+	name(std::string()), apcost(0), dmg(0)
+{
+}
 
 AWeapon::AWeapon(std::string const &name, int apcost, int damage): name(name), apcost(apcost), dmg(damage)
 {

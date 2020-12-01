@@ -6,13 +6,13 @@
 /*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:12:23 by adrian            #+#    #+#             */
-/*   Updated: 2020/12/01 18:16:57 by adrian           ###   ########.fr       */
+/*   Updated: 2020/12/01 19:50:58 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SuperMutan.hpp"
 
-SuperMutant::SuperMutant() : Enemy(80, "SuperMutant")
+SuperMutant::SuperMutant() : Enemy(170, "SuperMutant")
 {
 	std::cout << "Gaaah. Me want smash heads!\n";
 }
