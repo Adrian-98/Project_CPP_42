@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Enemy.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 18:10:03 by adrian            #+#    #+#             */
-/*   Updated: 2020/12/01 19:53:09 by adrian           ###   ########.fr       */
+/*   Updated: 2020/12/02 19:20:16 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ Enemy::Enemy(Enemy const &other)
 	*this = other;
 }
 
-Enemy::~Enemy()
-{
-	std::cout << "Enemy DEAD :S\n";
-}
-
 Enemy &Enemy::operator=(Enemy const &other)
 {
 	this->type = other.type;
 	this->hp = other.hp;
 	return (*this);
+}
+
+Enemy::~Enemy()
+{
+	std::cout << "Enemy DEAD :S\n";
 }
 
 std::string const &Enemy::getType(void) const
