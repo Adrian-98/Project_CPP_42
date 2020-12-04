@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 18:16:00 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/04 18:50:03 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/04 20:02:56 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class MateriaSource: public IMateriaSource
 			MateriaSource &operator=(MateriaSource const &other);
 
 			void learnMateria(AMateria *m);
-			AMateria* createMateria(std::string const &type);
+			AMateria *createMateria(std::string const &type);
 };
 
 #endif

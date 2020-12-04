@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 18:15:32 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/04 19:04:51 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/04 20:00:23 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx)
 {
-	if (idx < 0 || idx >= this->equipped || this->inventory[idx] == nullptr)
+	if (idx < 0 || idx >= this->equipped || this->inventory[idx] == nullptr)
 		return ;
 	for (int i = idx; i < 3; i++)
 	{

@@ -6,9 +6,16 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 18:16:50 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/02 18:18:59 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/04 19:54:37 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <iostream>
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
+
 
 int main()
 {
