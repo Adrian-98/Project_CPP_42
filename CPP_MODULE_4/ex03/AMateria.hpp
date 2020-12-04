@@ -6,24 +6,24 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 18:14:38 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/02 19:18:03 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/04 19:06:55 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
-#include <iostream>
-
-
+# include <iostream>
+# include <string>
+# include "ICharacter.hpp"
 class AMateria
 {
-	private:
+	protected:
 			std::string type;
 			unsigned int _xp;
 	public:
 			AMateria(std::string const & type);
-			~AMateria();
+			virtual ~AMateria();
 
 			AMateria(AMateria const &other);
 			AMateria &operator=(AMateria const &other);
