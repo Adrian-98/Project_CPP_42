@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 16:40:00 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/08 18:43:12 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/09 19:13:28 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ class Bureaucrat
 				class GradeTooLowException: public std::exception {
 				virtual const char* what() const throw();
 				};
-	
+				void executeForm(Form const &form) const;
 };
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat);

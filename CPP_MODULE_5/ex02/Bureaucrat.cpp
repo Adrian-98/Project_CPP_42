@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 16:39:51 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/08 18:37:46 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/09 19:13:50 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,23 @@ void Bureaucrat::signForm(Form &form) const
 		std::cout << *this << " signs " << form << std::endl;
 	}
 	form.beSigned(*this);
+}
+
+void Bureaucrat::executeForm(Form const &form) const
+{
+	if (!form.isSigned())
+	{
+		std::cout << *this << " cannot execute " << form
+				<< " because the form is unsigned." << std::endl;
+	}
+	else if (form.getExecuteGrade() < this->grade)
+	{
+		std::cout << *this << " cannot execute " << form
+				<< " because it's grade is too low." << std::endl;
+	}
+	else
+	{
+		std::cout << *this << " executes " << form << std::endl;
+	}
+	form.execute(*this);
 }

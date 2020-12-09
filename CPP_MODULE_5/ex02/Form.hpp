@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 17:09:38 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/08 18:49:10 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/09 18:10:36 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ class Form
 				class FormAlreadySignedException: public std::exception {
 					virtual const char* what() const throw();
 				};
-
+				class UnsignedFormException: public std::exception {
+				virtual const char* what() const throw();
+				};
+				
 				Form &operator=(Form const &other);
 
 				std::string const &getName(void) const;
@@ -50,6 +53,7 @@ class Form
 				int getExecuteGrade(void) const;
 
 				void beSigned(Bureaucrat const &bureaucrat);
+				virtual void execute(Bureaucrat const &bureaucrat) const = 0;
 	
 };
 

@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 17:09:31 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/08 18:48:57 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/09 18:11:05 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,11 @@ const char* Form::FormAlreadySignedException::what() const throw()
 	return "FormException: The Form is already signed";
 }
 
+const char* Form::UnsignedFormException::what() const throw()
+{
+	return "FormException: Unsigned form can not be executed";
+}
+
 void Form::beSigned(Bureaucrat const &bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->signGrade)
@@ -91,4 +96,12 @@ void Form::beSigned(Bureaucrat const &bureaucrat)
 	else if (this->_signed)
 		throw Form::FormAlreadySignedException();
 	this->_signed = true;
+}
+
+void Form::execute(Bureaucrat const &bureaucrat) const
+{
+	if (bureaucrat.getGrade() > this->executeGrade)
+		throw Form::GradeTooLowException();
+	if (!this->_signed)
+		throw Form::UnsignedFormException();
 }
