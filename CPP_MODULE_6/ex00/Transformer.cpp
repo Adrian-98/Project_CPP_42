@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 17:00:07 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/10 19:11:31 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/10 20:23:05 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 Transformer::Transformer(std::string const &value) :
 str(value), type(TypeInvalid)
 {
-	if (str.length() == 1 && isascii(str[0]) && !isdigit(str[0]))
+	if (str.length() == 1 && isascii(str[0]) && !isdigit(str[0]) && type == TypeInvalid)
 		type = TypeChar;
-    else if (str[str.length() - 1] == 'f' && type == TypeInvalid)
+	if (str[0] == '-' || str[0] == '+')
+		str.erase(0, 1);
+    if (str[str.length() - 1] == 'f' && type == TypeInvalid)
 	{
 		try
 		{
@@ -36,8 +38,19 @@ str(value), type(TypeInvalid)
 			i++;
 		else
 			break ;
-		if (i == (int)(str.length()))
+		if (i == (int)(str.length()) && type == TypeInvalid)
 			type = TypeInt;
+	}
+	int flag = 0;
+	int count = 0;
+	for (int i = 0; i < (int)str.length(); i++)
+	{
+		if (isdigit(str[i]) != 0)
+			count++;
+		else if (str[i] == '.')
+			flag = 1;
+		if (count == (int)(str.length() - 1) && flag == 1 && type == TypeInvalid)
+			type = TypeDouble;			
 	}
 	if (type == TypeFloat)
     	std::cout << "float" << std::endl;
@@ -45,6 +58,8 @@ str(value), type(TypeInvalid)
     	std::cout << "int" << std::endl;
 	else if (type == TypeChar)
     	std::cout << "char" << std::endl;
+	else if (type == TypeDouble)
+    	std::cout << "double" << std::endl;
 	else 
 		std::cout << "other" << std::endl;
     
