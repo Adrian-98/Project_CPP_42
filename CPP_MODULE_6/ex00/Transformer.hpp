@@ -6,14 +6,14 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 17:00:14 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/10 18:10:19 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/10 18:21:07 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TRANSFORMER_HPP
 #define TRANSFORMER_HPP
 
-#include <iostream>
+# include <iostream>
 # include <iomanip>
 # include <sstream>
 # include <string>
@@ -25,7 +25,7 @@ class Transformer
 {
         private:
                 Transformer();
-                std::string const str;
+                std::string str;
                 int type;
                 
                 int ivalue;
@@ -35,18 +35,18 @@ class Transformer
                 
 
                 enum type {
-                    TypeChar,
+                        TypeChar,
 	            	TypeInt,
-		            TypeFloat,
-		            TypeDouble,
-		            TypeLong,
-		            TypeInvalid
+                        TypeFloat,
+                        TypeDouble,
+                        TypeLong,
+                        TypeInvalid
                 };
         public:  
                 Transformer(std::string const &value);
                 virtual ~Transformer();
                 Transformer(Transformer const &copy);
-                Interpreter &operator=(Interpreter const &other);
+                Transformer &operator=(Transformer const &other);
 };
 
 #endif

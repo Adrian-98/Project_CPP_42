@@ -6,26 +6,49 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 17:00:07 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/10 17:28:50 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/10 19:00:05 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Transformer.hpp"
 
-Transformer::Transformer(std::string &value) :
+Transformer::Transformer(std::string const &value) :
 str(value), type(TypeInvalid)
 {
-    if (str[str.lentgh() - 1] == 'f')
+	if (str.length() == 1 && isascii(str[0]) && !isdigit(str[0]))
+		type = TypeChar;
+    else if (str[str.length() - 1] == 'f' && type == TypeInvalid)
+	{
+		try
+		{
+			str[str.length() - 2] |= 'n';
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}			
         type = TypeFloat;
-    std::cout << type << std::endl;
+	}
+	for (int i = 0; i < str.length(); i++)
+	{
+		isdigit(str[0])
+	}
+	if (type == TypeFloat)
+    	std::cout << "float" << std::endl;
+	else if (type == TypeInt)
+    	std::cout << "int" << std::endl;
+	else if (type == TypeChar)
+    	std::cout << "char" << std::endl;
+	else 
+		std::cout << "other" << std::endl;
     
 }
 
-Interpreter::~Interpreter()
+Transformer::~Transformer()
 {
 }
 
-Interpreter &Interpreter::operator=(Interpreter const &other)
+Transformer &Transformer::operator=(Transformer const &other)
 {
 	this->str = other.str;
 	this->type = other.type;
@@ -38,7 +61,7 @@ Interpreter &Interpreter::operator=(Interpreter const &other)
 	return (*this);
 }
 
-Interpreter::Interpreter(Interpreter const &other):
+Transformer::Transformer(Transformer const &other):
 	str(other.str), type(other.type),
 	ivalue(other.ivalue), fvalue(other.fvalue),
 	dvalue(other.dvalue), cvalue(other.cvalue)
