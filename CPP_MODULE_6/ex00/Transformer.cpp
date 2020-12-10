@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 17:00:07 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/10 19:00:05 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/10 19:11:31 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,23 @@ str(value), type(TypeInvalid)
 	{
 		try
 		{
-			str[str.length() - 2] |= 'n';
+			if (str[str.length() - 2] != 'n')
+				type = TypeFloat;
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << '\n';
 		}			
-        type = TypeFloat;
+        
 	}
-	for (int i = 0; i < str.length(); i++)
+	for (int i = 0; i < (int)str.length();)
 	{
-		isdigit(str[0])
+		if (isdigit(str[i]) != 0)
+			i++;
+		else
+			break ;
+		if (i == (int)(str.length()))
+			type = TypeInt;
 	}
 	if (type == TypeFloat)
     	std::cout << "float" << std::endl;
