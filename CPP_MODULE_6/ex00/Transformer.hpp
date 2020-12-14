@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 17:00:14 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/10 18:21:07 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/14 17:35:53 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <cctype>
 # include <cmath>
 # include <limits>
+ #include <xlocale.h>
 
 class Transformer
 {
@@ -39,7 +40,6 @@ class Transformer
 	            	TypeInt,
                         TypeFloat,
                         TypeDouble,
-                        TypeLong,
                         TypeInvalid
                 };
         public:  

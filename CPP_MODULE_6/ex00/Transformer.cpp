@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 17:00:07 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/10 20:23:05 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/14 18:32:02 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,16 @@ str(value), type(TypeInvalid)
 {
 	if (str.length() == 1 && isascii(str[0]) && !isdigit(str[0]) && type == TypeInvalid)
 		type = TypeChar;
-	if (str[0] == '-' || str[0] == '+')
+	if ((str[0] == '-' || str[0] == '+') && isdigit(str[1]))
 		str.erase(0, 1);
+	std::cout << str << std::endl;
     if (str[str.length() - 1] == 'f' && type == TypeInvalid)
 	{
 		try
 		{
 			if (str[str.length() - 2] != 'n')
+				type = TypeFloat;
+			else if (str.compare("nanf") == 0 && type == TypeInvalid)
 				type = TypeFloat;
 		}
 		catch(const std::exception& e)
@@ -53,7 +56,33 @@ str(value), type(TypeInvalid)
 			type = TypeDouble;			
 	}
 	if (type == TypeFloat)
-    	std::cout << "float" << std::endl;
+    {
+		char c;
+		int i;
+		float f  = std::stof(str);
+		double d = std::stod(str);
+		try
+		{
+			c = '*';
+			i = std::stoi(str);
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << "char: impossible" << std::endl;
+			std::cout << "int: " << "impossible" << std::endl;
+			std::cout << "float: " << f << "f"<< std::endl;
+			std::cout << "double: " << d << std::endl;
+			type = 4;
+		}
+		
+		if (type != 4)
+		{
+			std::cout << "char:  '" << c << "'"<< std::endl;
+			std::cout << "int: " << i << std::endl;
+			std::cout << "float: " << f << "f"<< std::endl;
+			std::cout << "double: " << d << std::endl;
+		}
+	}
 	else if (type == TypeInt)
     	std::cout << "int" << std::endl;
 	else if (type == TypeChar)
