@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 17:00:07 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/14 18:32:02 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/14 18:51:22 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ str(value), type(TypeInvalid)
 		type = TypeChar;
 	if ((str[0] == '-' || str[0] == '+') && isdigit(str[1]))
 		str.erase(0, 1);
-	std::cout << str << std::endl;
+	//std::cout << str << std::endl;
+	if (str.compare("nan") == 0 && type == TypeInvalid)
+		type = TypeDouble;
     if (str[str.length() - 1] == 'f' && type == TypeInvalid)
 	{
 		try
@@ -28,6 +30,8 @@ str(value), type(TypeInvalid)
 				type = TypeFloat;
 			else if (str.compare("nanf") == 0 && type == TypeInvalid)
 				type = TypeFloat;
+			else if ((str.compare("-inf") == 0 || str.compare("+inf") == 0) && type == TypeInvalid)
+				type = TypeDouble;
 		}
 		catch(const std::exception& e)
 		{
@@ -84,13 +88,55 @@ str(value), type(TypeInvalid)
 		}
 	}
 	else if (type == TypeInt)
-    	std::cout << "int" << std::endl;
+    {
+		int i = std::stoi(str);
+		float f  = std::stof(str);
+		double d = std::stod(str);
+		std::cout << "char: Non displayable"<< std::endl;
+		std::cout << "int: " << i << std::endl;
+		std::cout << "float: " << f << ".0f"<< std::endl;
+		std::cout << "double: " << d << ".0"<< std::endl;
+	}
 	else if (type == TypeChar)
-    	std::cout << "char" << std::endl;
+    {
+		std::cout << "char: "<< str << std::endl;
+		std::cout << "int: Non displayable" << std::endl;
+		std::cout << "float: Non displayable" << std::endl;
+		std::cout << "double: Non displayable"  << std::endl;
+	}
 	else if (type == TypeDouble)
-    	std::cout << "double" << std::endl;
+    {
+		char c;
+		int i;
+		float f  = std::stof(str);
+		double d = std::stod(str);
+		try
+		{
+			c = '*';
+			i = std::stoi(str);
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << "char: impossible" << std::endl;
+			std::cout << "int: " << "impossible" << std::endl;
+			std::cout << "float: " << f << "f"<< std::endl;
+			std::cout << "double: " << d << std::endl;
+			type = 4;
+		}
+		
+		if (type != 4)
+		{
+			std::cout << "char:  '" << c << "'"<< std::endl;
+			std::cout << "int: " << i << std::endl;
+			std::cout << "float: " << f << "f"<< std::endl;
+			std::cout << "double: " << d << std::endl;
+		}
+	}
 	else 
-		std::cout << "other" << std::endl;
+	{
+		std::cout << "convert: error: bad arguments\n"
+				<< "         usage: value" << std::endl;
+	}
     
 }
 
