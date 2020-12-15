@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 16:31:35 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/15 16:51:11 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/15 17:33:36 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void identify_from_pointer(Base *p)
 		std::cout << "C";
 }
 
-void identify_from_pointer(Base &p)
+void identify_from_reference(Base &p)
 {
     identify_from_pointer(&p);
 }

@@ -6,19 +6,17 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 16:25:01 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/15 16:27:30 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/15 17:21:14 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BASE_HPP
 #define BASE_HPP
 
-#include <iostream>
-
 class Base
 {
     public:
-           virtual ~Base();  
+           virtual ~Base() {};  
 };
 
 
