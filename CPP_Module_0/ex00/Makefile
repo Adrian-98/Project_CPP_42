@@ -6,7 +6,7 @@
 #    By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/06 17:29:14 by amunoz-p          #+#    #+#              #
-#    Updated: 2020/11/06 18:01:28 by amunoz-p         ###   ########.fr        #
+#    Updated: 2020/12/10 18:16:40 by amunoz-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRCS			= megaphone.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 
-CXXF 			= clang++
+CXX 			= clang++
 
 RM 				= rm -f
 
