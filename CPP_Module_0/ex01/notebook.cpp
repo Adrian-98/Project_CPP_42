@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 19:02:35 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/11 17:43:58 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/18 16:58:49 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,35 +47,22 @@ void    Notebook::show_search_header(void)
 
 void 	Notebook::search_contact(void)
 {
-	int index = 0;
-	bool run = true;
+	int	index;
 
 	if (this->amount == 0)
-		std::cout << "# Empty phonebook, add a contact\n";
+		std::cout << "# Add a contact before searching !" << std::endl;
 	else
 	{
 		this->show_search_header();
-		std::cout << "# -Enter the index number to display a contact or 0 to exit\n~";
-		while (run)
+		std::cout << "# Enter Index to display Informations or 0 to Exit\n~";
+		while (!(std::cin >> index) || (index < 0 || index > this->amount))
 		{
-			std::cin >> index;
-			if (index <= 0)
-			{
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "# EXIT\n~";
-				run = false;
-			}
-			else if (index > this->amount)
-			{
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "# Invalid index\n~";
-			}
-			else
-				run = false;			
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "# Invalid Index\n~";
 		}
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		this->contacts[index - 1].display();
+		if (index > 0)
+			this->contacts[index - 1].display();
 	}
 }

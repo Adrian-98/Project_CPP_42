@@ -6,11 +6,12 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 19:18:21 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/11 17:36:21 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/18 17:45:01 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "notebook.hpp"
+#include <ctype.h>
 
 void		Contact::display(void)
 {
@@ -56,6 +57,20 @@ bool		Contact::set_informations(int index)
 	{
 		std::cout << "#" << fields_name[i] << "\n->";
 		std::getline(std::cin, this->informations[i]);
+		if (i == 0 || i == 1)
+		{
+			char array[100];
+			std::strcpy(array, this->informations[i].c_str());
+			for (unsigned int j = 0; j < this->informations[i].size(); j++)
+			{
+				if ((isalpha(array[j])) == 0)
+				{
+					i--;
+					std::cout << "Warning: only letters can be used for this filed!\n";
+					break ;
+				}
+			}
+		}
 	}
 	size_t length = 0;
 	for (int i = FirstName; i<= Secret; i++)

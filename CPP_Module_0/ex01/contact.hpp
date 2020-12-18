@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 18:25:46 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/11/10 18:27:32 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2020/12/18 17:25:30 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ class Contact
 			Contact();
 			virtual ~Contact();
 			
+
 			bool	set_informations(int index);
 			void	display_header(void);
 			void	display(void);
