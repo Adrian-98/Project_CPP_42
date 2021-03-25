@@ -6,7 +6,7 @@
 /*   By: amunoz-p <amunoz-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 17:00:07 by amunoz-p          #+#    #+#             */
-/*   Updated: 2020/12/14 18:51:22 by amunoz-p         ###   ########.fr       */
+/*   Updated: 2021/03/25 16:43:39 by amunoz-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ str(value), type(TypeInvalid)
 	}
 	int flag = 0;
 	int count = 0;
+	std::stringstream ss;
+	long double num;
+	ss << str;
+	ss >> num;
 	for (int i = 0; i < (int)str.length(); i++)
 	{
 		if (isdigit(str[i]) != 0)
@@ -108,8 +112,8 @@ str(value), type(TypeInvalid)
     {
 		char c;
 		int i;
-		float f  = std::stof(str);
-		double d = std::stod(str);
+		float f  = static_cast<float>(num);
+		double d = static_cast<double>(num);
 		try
 		{
 			c = '*';
@@ -119,8 +123,8 @@ str(value), type(TypeInvalid)
 		{
 			std::cout << "char: impossible" << std::endl;
 			std::cout << "int: " << "impossible" << std::endl;
-			std::cout << "float: " << f << "f"<< std::endl;
-			std::cout << "double: " << d << std::endl;
+			std::cout << "float: " << std::setprecision(1) << std::fixed << f << "f"<< std::endl;
+			std::cout << "double: " << std::setprecision(1) << std::fixed << d << std::endl;
 			type = 4;
 		}
 		
@@ -128,8 +132,8 @@ str(value), type(TypeInvalid)
 		{
 			std::cout << "char:  '" << c << "'"<< std::endl;
 			std::cout << "int: " << i << std::endl;
-			std::cout << "float: " << f << "f"<< std::endl;
-			std::cout << "double: " << d << std::endl;
+			std::cout << "float: " << std::setprecision(1) << std::fixed << f << "f"<< std::endl;
+			std::cout << "double: " << std::setprecision(1) << std::fixed << d << std::endl;
 		}
 	}
 	else 
